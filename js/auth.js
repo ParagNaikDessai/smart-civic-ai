@@ -108,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const photoUrl = user.photoURL || defaultAvatar;
         const displayName = user.displayName || user.email.split('@')[0];
         const profileLink = isRoot ? 'pages/profile.html' : 'profile.html';
+        const reportedLink = isRoot ? 'pages/reported-issues.html' : 'reported-issues.html';
 
         const settingsLink = isRoot ? 'pages/settings.html' : 'settings.html';
         const adminHtml = user.email === 'paragdessai7@gmail.com' 
@@ -126,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <p class="dropdown-email">${user.email}</p>
             </div>
             <div class="dropdown-divider"></div>
+            <a href="${reportedLink}" class="dropdown-item">Reported Issues</a>
             <a href="${profileLink}" class="dropdown-item">My Profile</a>
             ${adminHtml}
             <a href="#" class="dropdown-item text-danger" id="btn-logout">Logout</a>
