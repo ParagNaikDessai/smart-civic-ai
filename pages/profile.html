@@ -212,7 +212,8 @@
       async function fetchUserTickets(uid) {
         const container = document.getElementById('my-tickets-container');
         try {
-          const snapshot = await db.collection('tickets').where('uid', '==', uid).orderBy('timestamp', 'desc').get();
+          // Fetch without orderBy to avoid needing a Firebase Composite Index
+          const snapshot = await db.collection('tickets').where('uid', '==', uid).get();
           
           if (snapshot.empty) {
             container.innerHTML = '<p style="color: var(--color-text-muted); font-size: 0.9rem;">You haven\'t reported any issues yet.</p>';
@@ -221,8 +222,17 @@
           
           container.innerHTML = ''; // clear loading
           
-          snapshot.forEach(doc => {
-            const ticket = doc.data();
+          // Extract data and sort by timestamp descending in JavaScript
+          const tickets = [];
+          snapshot.forEach(doc => tickets.push(doc.data()));
+          
+          tickets.sort((a, b) => {
+            const timeA = a.timestamp ? a.timestamp.toMillis() : 0;
+            const timeB = b.timestamp ? b.timestamp.toMillis() : 0;
+            return timeB - timeA;
+          });
+          
+          tickets.forEach(ticket => {
             const date = ticket.timestamp ? ticket.timestamp.toDate().toLocaleDateString() : 'Recent';
             const card = document.createElement('div');
             card.className = 'receipt-card';
