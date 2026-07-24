@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workflow Architecture - Smart Civic AI</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Learn about the Smart Civic AI system workflow, UN SDG 11 alignment metrics, and automated NLP issue routing mechanisms.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+
+  <!-- Keyboard Accessibility: Skip to Main Content Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header Banner -->
+  <header>
+    <div class="container header-container">
+      <a href="../index.html" class="logo-link" aria-label="Smart Civic AI Home">
+        <img src="../assets/logo/logo.svg" alt="Smart Civic AI Logo">
+        <span>Smart Civic AI</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="report.html" class="nav-link">Report</a></li>
+          <li><a href="track.html" class="nav-link">Track</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action Controls -->
+      <div class="header-actions">
+        <span class="ai-badge" aria-label="AI Triage Core Operational">AI Core Active</span>
+        
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle visual theme">
+          <svg class="sun-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 17a5 5 0 100-10 5 5 0 000 10z" />
+          </svg>
+          <svg class="moon-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25c0 5.385 4.365 9.75 9.75 9.75 4.507 0 8.33-3.045 9.499-7.143z" />
+          </svg>
+        </button>
+        
+        <button class="btn btn-primary" id="btn-login-header" style="padding: 8px 16px; font-size: 0.85rem; display:none;" aria-label="Login to dashboard">Login</button>
+        <button class="btn btn-secondary" id="btn-logout-header" style="padding: 8px 16px; font-size: 0.85rem; display:none;" aria-label="Logout">Logout</button>
+        
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Body -->
+  <main id="main-content" class="container animate-fade-in">
+    
+    <!-- Hero Project Intro -->
+    <section class="card" style="margin-bottom: 40px; border-left: 4px solid var(--color-primary);">
+      <h1 style="color: var(--color-text); font-size: 2rem; margin-bottom: 12px; font-weight: 900; letter-spacing: -0.04em;">Workflow Architecture</h1>
+      <h2 style="font-size: 1rem; color: var(--color-accent); margin-bottom: 20px; font-weight: 700;">Intelligent Issue Routing Platform</h2>
+      <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text);">
+        Operations centers and community managers face hundreds of maintenance reports daily, ranging from structural hazards to utilities damage. Manual ticket triaging leads to queue backlogs, routing errors, and delayed resolution schedules.
+      </p>
+      <p style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text); margin-top: 15px;">
+        <strong>Smart Civic AI</strong> resolves this administrative bottleneck using AI Agent automation. When a user submits an issue ticket with location details and evidence photos, the frontend structures the report variables. An orchestration engine (like n8n running Gemini AI models) parses the text, calculates severity, logs entries into a spreadsheet database, and routes tickets to correct field maintenance queues instantly.
+      </p>
+    </section>
+
+    <!-- UN SDG 11 Goal Section -->
+    <section class="sdg-banner" style="margin-bottom: 40px;">
+      <div class="sdg-logo" style="flex-shrink: 0;" aria-hidden="true">
+        <div class="sdg-number" style="font-size: 3.5rem;">11</div>
+        <div class="sdg-title" style="font-size: 0.75rem;">Resilient Cities</div>
+      </div>
+      <div class="sdg-content">
+        <h2>UN Sustainable Settlements Alignment</h2>
+        <p>Our platform is engineered in alignment with UN Sustainable Development Goal 11 indicators. By automating community maintenance workflows, we support target benchmarks:</p>
+        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-bottom: 0; gap: 16px; margin-top: 20px;">
+          <div class="card" style="padding: 20px; background-color: rgba(255,255,255,0.05); border: none; color: white;">
+            <h3 style="color: var(--color-accent-green); font-size: 0.95rem; margin-bottom: 8px; font-weight: 700;">Target 11.6</h3>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.8rem; margin-bottom: 0; line-height: 1.4;">Reduce the environmental impact of cities by streamlining waste management and community sanitation reports.</p>
+          </div>
+          <div class="card" style="padding: 20px; background-color: rgba(255,255,255,0.05); border: none; color: white;">
+            <h3 style="color: var(--color-accent-green); font-size: 0.95rem; margin-bottom: 8px; font-weight: 700;">Target 11.2</h3>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.8rem; margin-bottom: 0; line-height: 1.4;">Provide access to safe, affordable, accessible and resilient road infrastructure, addressing traffic hazards quickly.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Workflow Visualizer -->
+    <section class="workflow-section">
+      <h2 style="color: var(--color-text); margin-bottom: 24px; text-align: center; font-weight: 800; letter-spacing: -0.03em;">Integrated Automation Pipeline</h2>
+      <div class="workflow-steps">
+        <!-- Step 1 -->
+        <div class="workflow-card">
+          <div class="workflow-number">1</div>
+          <h3>Ticket Filing</h3>
+          <p>User logs descriptive details, coordinate variables, and evidence photos via frontend.</p>
+        </div>
+        <!-- Step 2 -->
+        <div class="workflow-card">
+          <div class="workflow-number">2</div>
+          <h3>NLP Core Analysis</h3>
+          <p>Gemini LLM model parses context strings, matching keywords to categories.</p>
+        </div>
+        <!-- Step 3 -->
+        <div class="workflow-card">
+          <div class="workflow-number">3</div>
+          <h3>Severity Analysis</h3>
+          <p>AI calculates incident severity (High, Medium, Low) based on safety risks.</p>
+        </div>
+        <!-- Step 4 -->
+        <div class="workflow-card">
+          <div class="workflow-number">4</div>
+          <h3>Team Dispatch</h3>
+          <p>Ticket is logged in sheets and routed directly to the designated field crew queue.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Future Scope / Backend integration details -->
+    <section class="card" style="margin-top: 40px;">
+      <h2 style="color: var(--color-text); margin-bottom: 12px; font-weight: 850; letter-spacing: -0.02em;">Integration Architecture</h2>
+      <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 24px; line-height: 1.5;">
+        The frontend has been built strictly separated from the business logic layer. In production deployments, the following systems integrate seamlessly with our data contracts:
+      </p>
+      
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: flex; gap: 15px; align-items: flex-start;">
+          <div style="color: var(--color-primary); padding-top: 2px;">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+          </div>
+          <div>
+            <h4 style="color: var(--color-text); font-size: 0.95rem; font-weight: 750;">n8n Webhook Endpoint</h4>
+            <p style="color: var(--color-text-muted); font-size: 0.85rem; line-height: 1.4;">Connecting frontend HTTP calls to an n8n webhook listener that acts as a serverless database trigger.</p>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 15px; align-items: flex-start;">
+          <div style="color: var(--color-primary); padding-top: 2px;">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 2v-6m-9-3h9m0 0a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
+          </div>
+          <div>
+            <h4 style="color: var(--color-text); font-size: 0.95rem; font-weight: 750;">Google Sheets Log Database</h4>
+            <p style="color: var(--color-text-muted); font-size: 0.85rem; line-height: 1.4;">Appending ticket entries directly to a shared spreadsheet to allow operations managers to oversee and coordinate tasks easily.</p>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 15px; align-items: flex-start;">
+          <div style="color: var(--color-primary); padding-top: 2px;">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <div>
+            <h4 style="color: var(--color-text); font-size: 0.95rem; font-weight: 750;">Email Notification Nodes</h4>
+            <p style="color: var(--color-text-muted); font-size: 0.85rem; line-height: 1.4;">Triggering automated client updates (using SendGrid or Gmail nodes in n8n) sending tracking links on status changes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Banner -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h2>Smart Civic AI</h2>
+        <p>An intelligent, AI-powered ticket routing and tracking platform aligned with UN Sustainable Development Goal 11 for resilient, safe human settlements.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Product</h3>
+        <ul>
+          <li><a href="report.html">Submit Ticket</a></li>
+          <li><a href="track.html">Track Status</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Workflow</a></li>
+          <li><a href="faq.html">FAQ Help</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy.html">Data Security Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Built with ❤️ using HTML CSS JavaScript + n8n + Gemini AI</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/utils.js"></script>
+  <script src="../js/app.js"></script>
+
+  <!-- Firebase Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+  
+  <script src="../js/firebase.js"></script>
+  <script src="../js/auth.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Issue Ticket - Smart Civic AI</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="File an issue ticket regarding waste management, infrastructure group, water services, or public safety. AI will triage and route it.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  
+  <!-- Leaflet Map Integration -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+
+  <!-- Keyboard Accessibility: Skip to Main Content Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header Banner -->
+  <header>
+    <div class="container header-container">
+      <a href="../index.html" class="logo-link" aria-label="Smart Civic AI Home">
+        <img src="../assets/logo/logo.svg" alt="Smart Civic AI Logo">
+        <span>Smart Civic AI</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="report.html" class="nav-link">Report</a></li>
+          <li><a href="track.html" class="nav-link">Track</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action Controls -->
+      <div class="header-actions">
+        <span class="ai-badge" aria-label="AI Triage Core Operational">AI Core Active</span>
+        
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle visual theme">
+          <svg class="sun-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 17a5 5 0 100-10 5 5 0 000 10z" />
+          </svg>
+          <svg class="moon-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25c0 5.385 4.365 9.75 9.75 9.75 4.507 0 8.33-3.045 9.499-7.143z" />
+          </svg>
+        </button>
+        
+        <button class="btn btn-primary" id="btn-login-header" style="padding: 8px 16px; font-size: 0.85rem; display:none;" aria-label="Login to dashboard">Login</button>
+        <button class="btn btn-secondary" id="btn-logout-header" style="padding: 8px 16px; font-size: 0.85rem; display:none;" aria-label="Logout">Logout</button>
+        
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Body -->
+  <main id="main-content" class="container animate-fade-in">
+    <div class="form-container">
+      <h1 class="form-title" style="margin-bottom: 24px; border: none; padding-bottom: 0;">Report an Issue</h1>
+      <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-bottom: 24px;">Tell us about the issue you're facing</p>
+      
+      <!-- Wizard Progress Header -->
+      <div class="wizard-progress" id="wizard-progress-header">
+        <div class="wizard-progress-bar" id="wizard-progress-bar"></div>
+        <div class="wizard-step-node active" data-step="1">1</div>
+        <div class="wizard-step-node" data-step="2">2</div>
+        <div class="wizard-step-node" data-step="3">3</div>
+      </div>
+
+      <form id="report-form" novalidate>
+        
+        <!-- Screens Container -->
+        <div id="wizard-screens-container">
+          
+          <!-- STEP 1: CATEGORY & CONTENT -->
+          <div class="wizard-screen active" id="step-1-screen">
+            <div class="form-group">
+              <label>Issue Category <span class="required" aria-hidden="true">*</span></label>
+              
+              <!-- Category Cards matching mockup -->
+              <div class="category-cards-grid">
+                <div class="category-card" data-value="road">
+                  <div class="category-card-icon">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 01.553-.894L9 2l6 3 5.447-2.724A1 1 0 0121 3.167v10.765a1 1 0 01-.553.894L15 18l-6 2z"/></svg>
+                  </div>
+                  <h3>Roads & Potholes</h3>
+                </div>
+                <div class="category-card" data-value="streetlight">
+                  <div class="category-card-icon">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364.364l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                  </div>
+                  <h3>Street Lights</h3>
+                </div>
+                <div class="category-card" data-value="waste">
+                  <div class="category-card-icon">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+                  </div>
+                  <h3>Waste Management</h3>
+                </div>
+                <div class="category-card" data-value="water">
+                  <div class="category-card-icon">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                  </div>
+                  <h3>Water Supply</h3>
+                </div>
+                <div class="category-card" data-value="water">
+                  <div class="category-card-icon">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"/></svg>
+                  </div>
+                  <h3>Drainage</h3>
+                </div>
+                <div class="category-card" data-value="road">
+                  <div class="category-card-icon">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                  </div>
+                  <h3>Parks & Gardens</h3>
+                </div>
+                <div class="category-card" data-value="safety">
+                  <div class="category-card-icon">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                  </div>
+                  <h3>Traffic Signals</h3>
+                </div>
+                <div class="category-card" data-value="safety">
+                  <div class="category-card-icon">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                  </div>
+                  <h3>Stray Animals</h3>
+                </div>
+              </div>
+              
+              <select id="category" name="category" aria-required="true" style="display: none;">
+                <option value="" disabled selected>Select category</option>
+                <option value="waste">Waste Management</option>
+                <option value="road">Infrastructure Group</option>
+                <option value="water">Water Services</option>
+                <option value="streetlight">Road Maintenance</option>
+                <option value="safety">Public Safety</option>
+                <option value="other">Operations Group</option>
+              </select>
+            </div>
+
+            <!-- Issue Title -->
+            <div class="form-group">
+              <label for="complaint-title">Describe the issue <span class="required" aria-hidden="true">*</span></label>
+              <input type="text" id="complaint-title" name="title" placeholder="Brief summary of the issue (e.g. Water leak at Corner of 5th Ave)" aria-required="true">
+            </div>
+
+            <!-- Detailed Description -->
+            <div class="form-group">
+              <textarea id="description" name="description" placeholder="Provide details about the issue (e.g. specific hazards, physical dimensions, duration of the issue)" aria-required="true"></textarea>
+            </div>
+
+            <!-- Upload Evidence Image -->
+            <div class="form-group">
+              <label for="image-upload">Upload Evidence Image (Optional, Max 2MB)</label>
+              <div class="file-upload-wrapper" id="upload-wrapper" role="button" aria-label="File upload dropzone">
+                <div class="file-upload-info">
+                  <svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                  </svg>
+                  <span style="font-weight: 750; font-size: 1rem; color: var(--color-text);">Drag & drop image here or <strong style="color: var(--color-primary);">browse</strong></span>
+                  <span style="font-size: 0.8rem;">Supports PNG, JPG, JPEG</span>
+                </div>
+                <input type="file" id="image-upload" name="image" accept="image/*">
+              </div>
+              <img id="image-preview" class="image-preview" alt="Preview of uploaded evidence image">
+            </div>
+
+            <!-- Suggested AI metadata metrics -->
+            <div class="suggested-meta-row" id="suggested-meta-row">
+              <div class="suggested-meta-card">
+                <label>Priority (AI Suggested)</label>
+                <div><span class="badge badge-low" id="ai-suggested-priority">Low</span></div>
+              </div>
+              <div class="suggested-meta-card">
+                <label>AI Confidence</label>
+                <span id="ai-suggested-confidence" style="font-weight: 800; color: var(--color-success);">85%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2: LOCATION -->
+          <div class="wizard-screen" id="step-2-screen">
+            <div class="form-group">
+              <label for="location">Location / Landmark Address <span class="required" aria-hidden="true">*</span></label>
+              <input type="text" id="location" name="location" placeholder="e.g. Opposite Technology Park Central, Gate 2" aria-required="true">
+            </div>
+
+            <div class="form-group">
+              <label>GPS Coordinates (Optional - Helps AI Dispatch Teams)</label>
+              <div class="location-input-group" style="margin-bottom: 12px;">
+                <input type="text" id="latitude" name="latitude" placeholder="Latitude" aria-label="Latitude coordinates">
+                <input type="text" id="longitude" name="longitude" placeholder="Longitude" aria-label="Longitude coordinates">
+                <button type="button" class="btn btn-secondary" id="btn-locate" style="white-space: nowrap;">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 4px;" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+                  </svg>
+                  Get Location
+                </button>
+              </div>
+              
+              <!-- Interactive Leaflet Map Picker -->
+              <div id="report-map" class="map-placeholder" style="height: 220px;" aria-label="Interactive Leaflet map location picker"></div>
+            </div>
+          </div>
+
+          <!-- STEP 3: REVIEW -->
+          <div class="wizard-screen" id="step-3-screen">
+            <h2 style="font-size: 1.15rem; color: var(--color-text); margin-bottom: 20px; font-weight: 800; letter-spacing: -0.02em;">Review Ticket Parameters</h2>
+            <div class="receipt-card" style="box-shadow: none;">
+              <div class="receipt-body" style="padding: 24px;">
+                <div class="receipt-grid" style="margin-bottom: 20px;">
+                  <div class="receipt-item">
+                    <label>Issue Title</label>
+                    <p id="review-title">Title Text</p>
+                  </div>
+                  <div class="receipt-item">
+                    <label>Category</label>
+                    <p id="review-category">Category Type</p>
+                  </div>
+                  <div class="receipt-item">
+                    <label>Assigned Operations Team</label>
+                    <p id="review-dept">Team Description</p>
+                  </div>
+                  <div class="receipt-item">
+                    <label>AI Severity Rating</label>
+                    <div><span id="review-priority" class="badge">PRIORITY</span></div>
+                  </div>
+                </div>
+                <div class="receipt-description" style="margin-bottom: 0;">
+                  <label>Location Landmark Details</label>
+                  <p id="review-location" style="color: var(--color-text); font-weight: 600;"></p>
+                </div>
+                <div class="receipt-description" style="margin-bottom: 0; margin-top: 16px;">
+                  <label>Detailed Description</label>
+                  <p id="review-desc" style="color: var(--color-text); font-weight: 550; font-size: 0.9rem; line-height: 1.5;"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- AI loading screen skeleton placeholder -->
+        <div class="triage-loading-screen" id="triage-loading">
+          <div class="triage-spinner"></div>
+          <div class="triage-loading-text">AI is analysing your complaint...</div>
+          <div class="triage-loading-sub">Calculating severity ratings and routing tickets to operation queues...</div>
+          <div class="skeleton-wrapper">
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text-half"></div>
+            <div class="skeleton skeleton-image"></div>
+          </div>
+        </div>
+
+        <!-- Footer Actions -->
+        <div class="form-actions" id="wizard-actions-footer">
+          <button type="button" class="btn btn-secondary" id="btn-reset" style="margin-right: auto;">Reset</button>
+          <button type="button" class="btn btn-secondary" id="btn-back">Back</button>
+          <button type="button" class="btn btn-primary" id="btn-next">Next</button>
+          <button type="submit" class="btn btn-primary" id="btn-submit" style="display: none;">Submit Ticket</button>
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer Banner -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h2>Smart Civic AI</h2>
+        <p>An intelligent, AI-powered ticket routing and tracking platform aligned with UN Sustainable Development Goal 11 for resilient, safe human settlements.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Product</h3>
+        <ul>
+          <li><a href="report.html">Submit Ticket</a></li>
+          <li><a href="track.html">Track Status</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Workflow</a></li>
+          <li><a href="faq.html">FAQ Help</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy.html">Data Security Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Built with ❤️ using HTML CSS JavaScript + n8n + Gemini AI</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/utils.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/report.js"></script>
+
+  <!-- Firebase Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+  
+  <script src="../js/firebase.js"></script>
+  <script src="../js/auth.js"></script>
+
+</body>
+</html>

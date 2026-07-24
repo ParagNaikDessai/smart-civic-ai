@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Settings - Smart Civic AI</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="../css/style.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <style>
+    .settings-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+    .settings-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0 0 6px 0;
+    }
+    .settings-card p {
+      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      margin: 0 0 20px 0;
+    }
+    .key-display {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-bottom: 16px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      word-break: break-all;
+    }
+    .key-display .key-text {
+      flex: 1;
+      color: var(--color-text);
+    }
+    .key-display .key-text.masked {
+      color: var(--color-text-muted);
+    }
+    .key-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-sm {
+      padding: 8px 16px;
+      font-size: 0.8rem;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-text);
+      transition: all 0.2s;
+    }
+    .btn-sm:hover {
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+    .btn-sm.btn-danger {
+      border-color: #ef4444;
+      color: #ef4444;
+    }
+    .btn-sm.btn-danger:hover {
+      background: #ef4444;
+      color: #fff;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .status-badge.active {
+      background: rgba(34, 197, 94, 0.1);
+      color: #16a34a;
+    }
+    .status-badge.inactive {
+      background: rgba(239, 68, 68, 0.1);
+      color: #ef4444;
+    }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .status-dot.active { background: #16a34a; }
+    .status-dot.inactive { background: #ef4444; }
+    .update-form {
+      display: none;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--color-border);
+    }
+    .update-form.visible {
+      display: block;
+    }
+    .update-form input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .update-form input:focus {
+      border-color: var(--color-primary);
+    }
+    .test-result {
+      margin-top: 12px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      display: none;
+    }
+    .test-result.success {
+      background: rgba(34, 197, 94, 0.1);
+      color: #16a34a;
+      display: block;
+    }
+    .test-result.error {
+      background: rgba(239, 68, 68, 0.1);
+      color: #ef4444;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header Banner -->
+  <header>
+    <div class="container header-container">
+      <a href="../index.html" class="logo-link" aria-label="Smart Civic AI Home">
+        <img src="../assets/logo/logo.svg" alt="Smart Civic AI Logo">
+        <span>Smart Civic AI</span>
+      </a>
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="report.html" class="nav-link">Report</a></li>
+          <li><a href="track.html" class="nav-link">Track</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <span class="ai-badge" aria-label="AI Triage Core Operational">AI Core Active</span>
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle visual theme">
+          <svg class="sun-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 17a5 5 0 100-10 5 5 0 000 10z" />
+          </svg>
+          <svg class="moon-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25c0 5.385 4.365 9.75 9.75 9.75 4.507 0 8.33-3.045 9.499-7.143z" />
+          </svg>
+        </button>
+        <button class="btn btn-primary" id="btn-login-header" style="padding: 8px 16px; font-size: 0.85rem; display:none;" aria-label="Login to dashboard">Login</button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Body -->
+  <main id="main-content" class="container animate-slide-up">
+    <div class="form-container" style="max-width: 650px; margin: 0 auto;">
+      <h1 class="form-title" style="border: none; padding-bottom: 0;">⚙️ Admin Settings</h1>
+      <p style="color: var(--color-text-muted); margin-bottom: 32px; font-size: 0.95rem;">
+        Manage your API keys and application configuration.
+      </p>
+
+      <!-- Gemini API Key Card -->
+      <div class="settings-card" id="gemini-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+          <h3>🤖 Gemini AI API Key</h3>
+          <span class="status-badge" id="gemini-status">
+            <span class="status-dot"></span>
+            Checking...
+          </span>
+        </div>
+        <p>Used for AI image recognition, auto-fill, and fake image detection on the Report page.</p>
+
+        <div class="key-display" id="gemini-key-display">
+          <span class="key-text masked" id="gemini-key-text">Loading...</span>
+          <button class="btn-sm" id="btn-toggle-key" title="Show/Hide Key">👁️</button>
+        </div>
+
+        <div class="key-actions">
+          <button class="btn-sm" id="btn-test-key">🧪 Test Key</button>
+          <button class="btn-sm" id="btn-change-key">✏️ Change Key</button>
+          <button class="btn-sm btn-danger" id="btn-remove-key">🗑️ Remove Override</button>
+        </div>
+
+        <div class="test-result" id="test-result"></div>
+
+        <div class="update-form" id="update-form">
+          <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 8px;">Enter New Gemini API Key</label>
+          <input type="text" id="new-key-input" placeholder="Paste your new Gemini API key here...">
+          <div style="display: flex; gap: 10px;">
+            <button class="btn btn-primary" id="btn-save-key" style="padding: 10px 20px; font-size: 0.85rem;">Save Key</button>
+            <button class="btn-sm" id="btn-cancel-change">Cancel</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info Card -->
+      <div class="settings-card" style="border-left: 3px solid var(--color-primary);">
+        <h3>💡 How it works</h3>
+        <p style="margin-bottom: 0;">
+          When you set a new API key here, it is stored in your browser's <strong>localStorage</strong>. 
+          The Report page will always use your custom key first. If no custom key is found, it falls back to the default key hardcoded in the app. 
+          Click <strong>"Remove Override"</strong> to go back to using the default key.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h2>Smart Civic AI</h2>
+        <p>An intelligent, AI-powered ticket routing and tracking platform aligned with UN Sustainable Development Goal 11 for resilient, safe human settlements.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Product</h3>
+        <ul>
+          <li><a href="report.html">Submit Ticket</a></li>
+          <li><a href="track.html">Track Status</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Workflow</a></li>
+          <li><a href="faq.html">FAQ Help</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy.html">Data Security Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Built with ❤️ using HTML CSS JavaScript + n8n + Gemini AI</p>
+    </div>
+  </footer>
+
+  <!-- Firebase Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+  
+  <script src="../js/utils.js"></script>
+  <script src="../js/firebase.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/app.js"></script>
+
+  <!-- Main content hidden by default until auth check passes -->
+  <style>
+    #main-content { display: none; }
+    #access-denied { display: none; text-align: center; padding: 80px 20px; }
+    #access-denied h2 { font-size: 1.5rem; margin-bottom: 12px; }
+    #access-denied p { color: var(--color-text-muted); margin-bottom: 24px; }
+  </style>
+
+  <div id="access-denied" class="container">
+    <h2>🔒 Access Denied</h2>
+    <p>You must be an administrator to access this page.</p>
+    <a href="../index.html" class="btn btn-primary" style="padding: 12px 24px;">Return Home</a>
+  </div>
+
+  <script>
+    // Auth guard: only allow the hardcoded admin email
+    window.auth.onAuthStateChanged((user) => {
+      const mainContent = document.getElementById('main-content');
+      const accessDenied = document.getElementById('access-denied');
+      
+      if (user && user.email === 'paragdessai7@gmail.com') {
+        // User is the admin — show settings
+        mainContent.style.display = 'block';
+        accessDenied.style.display = 'none';
+      } else {
+        // Not admin — show access denied
+        mainContent.style.display = 'none';
+        accessDenied.style.display = 'block';
+      }
+    });
+  </script>
+
+  <script>
+    const DEFAULT_KEY = "YOUR_GEMINI_API_KEY_HERE";
+    const STORAGE_KEY = "smart_civic_gemini_api_key";
+
+    const keyTextEl = document.getElementById('gemini-key-text');
+    const statusEl = document.getElementById('gemini-status');
+    const testResultEl = document.getElementById('test-result');
+    const updateFormEl = document.getElementById('update-form');
+    const newKeyInput = document.getElementById('new-key-input');
+
+    let showKey = false;
+
+    function getActiveKey() {
+      return localStorage.getItem(STORAGE_KEY) || DEFAULT_KEY;
+    }
+
+    function isCustomKey() {
+      return !!localStorage.getItem(STORAGE_KEY);
+    }
+
+    function maskKey(key) {
+      if (!key || key.length < 12) return '••••••••';
+      return key.substring(0, 8) + '••••••••••••' + key.substring(key.length - 6);
+    }
+
+    function renderKeyDisplay() {
+      const key = getActiveKey();
+      const custom = isCustomKey();
+      keyTextEl.textContent = showKey ? key : maskKey(key);
+      keyTextEl.className = showKey ? 'key-text' : 'key-text masked';
+
+      const removeBtn = document.getElementById('btn-remove-key');
+      removeBtn.style.display = custom ? 'inline-flex' : 'none';
+    }
+
+    async function testKey(key) {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${key}`;
+      try {
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [{ parts: [{ text: "Reply with just the word OK" }] }]
+          })
+        });
+        if (res.ok) {
+          return { success: true, message: 'Key is valid and working!' };
+        } else {
+          const err = await res.json().catch(() => ({}));
+          if (res.status === 429) {
+            return { success: false, message: 'Rate limited. Key is valid but quota exceeded. Wait 30s.' };
+          }
+          return { success: false, message: err.error?.message || `Error ${res.status}` };
+        }
+      } catch (e) {
+        return { success: false, message: 'Network error: ' + e.message };
+      }
+    }
+
+    async function updateStatus() {
+      statusEl.innerHTML = '<span class="status-dot"></span> Checking...';
+      const result = await testKey(getActiveKey());
+      if (result.success) {
+        statusEl.innerHTML = '<span class="status-dot active"></span> Active';
+        statusEl.className = 'status-badge active';
+      } else {
+        statusEl.innerHTML = '<span class="status-dot inactive"></span> Error';
+        statusEl.className = 'status-badge inactive';
+      }
+    }
+
+    // Toggle show/hide
+    document.getElementById('btn-toggle-key').addEventListener('click', () => {
+      showKey = !showKey;
+      document.getElementById('btn-toggle-key').textContent = showKey ? '🙈' : '👁️';
+      renderKeyDisplay();
+    });
+
+    // Test key
+    document.getElementById('btn-test-key').addEventListener('click', async () => {
+      const btn = document.getElementById('btn-test-key');
+      btn.textContent = '⏳ Testing...';
+      btn.disabled = true;
+      testResultEl.className = 'test-result';
+      testResultEl.style.display = 'none';
+
+      const result = await testKey(getActiveKey());
+      testResultEl.textContent = result.message;
+      testResultEl.className = 'test-result ' + (result.success ? 'success' : 'error');
+
+      btn.textContent = '🧪 Test Key';
+      btn.disabled = false;
+    });
+
+    // Show change form
+    document.getElementById('btn-change-key').addEventListener('click', () => {
+      updateFormEl.classList.add('visible');
+      newKeyInput.value = '';
+      newKeyInput.focus();
+    });
+
+    // Cancel change
+    document.getElementById('btn-cancel-change').addEventListener('click', () => {
+      updateFormEl.classList.remove('visible');
+    });
+
+    // Save new key
+    document.getElementById('btn-save-key').addEventListener('click', async () => {
+      const newKey = newKeyInput.value.trim();
+      if (!newKey) {
+        if (window.Notification) window.Notification.show('Please enter an API key.', 'error');
+        return;
+      }
+
+      const btn = document.getElementById('btn-save-key');
+      btn.textContent = 'Validating...';
+      btn.disabled = true;
+
+      const result = await testKey(newKey);
+      if (result.success) {
+        localStorage.setItem(STORAGE_KEY, newKey);
+        updateFormEl.classList.remove('visible');
+        renderKeyDisplay();
+        updateStatus();
+        if (window.Notification) window.Notification.show('✅ New API key saved successfully!', 'success');
+      } else {
+        if (window.Notification) window.Notification.show('❌ Key validation failed: ' + result.message, 'error');
+      }
+
+      btn.textContent = 'Save Key';
+      btn.disabled = false;
+    });
+
+    // Remove override
+    document.getElementById('btn-remove-key').addEventListener('click', () => {
+      localStorage.removeItem(STORAGE_KEY);
+      renderKeyDisplay();
+      updateStatus();
+      if (window.Notification) window.Notification.show('Custom key removed. Using default key.', 'info');
+    });
+
+    // Init
+    renderKeyDisplay();
+    updateStatus();
+  </script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Smart Civic AI</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="../css/style.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+
+  <!-- Keyboard Accessibility: Skip to Main Content Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header Banner -->
+  <header>
+    <div class="container header-container">
+      <a href="../index.html" class="logo-link" aria-label="Smart Civic AI Home">
+        <img src="../assets/logo/logo.svg" alt="Smart Civic AI Logo">
+        <span>Smart Civic AI</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="report.html" class="nav-link">Report</a></li>
+          <li><a href="track.html" class="nav-link">Track</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action Controls -->
+      <div class="header-actions">
+        <span class="ai-badge" aria-label="AI Triage Core Operational">AI Core Active</span>
+        
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle visual theme">
+          <svg class="sun-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 17a5 5 0 100-10 5 5 0 000 10z" />
+          </svg>
+          <svg class="moon-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25c0 5.385 4.365 9.75 9.75 9.75 4.507 0 8.33-3.045 9.499-7.143z" />
+          </svg>
+        </button>
+        
+        <button class="btn btn-primary" id="btn-login-header" style="padding: 8px 16px; font-size: 0.85rem; display:none;" aria-label="Login to dashboard">Login</button>
+        
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Body -->
+  <main id="main-content" class="container animate-slide-up">
+    <div class="form-container" style="max-width: 450px; margin: 0 auto; text-align: center;">
+      
+      <!-- LOGIN FORM -->
+      <form id="login-form" novalidate style="text-align: left; display: block;">
+        <h1 class="form-title" style="border: none; padding-bottom: 0; text-align: center;">Welcome Back</h1>
+        <p style="color: var(--color-text-muted); margin-bottom: 24px; font-size: 0.95rem; text-align: center;">
+          Sign in to your Smart Civic AI dashboard to view and track your reports.
+        </p>
+
+        <!-- Google Sign In Button -->
+        <button type="button" id="btn-google-signin" class="btn" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 24px; background-color: #fff; color: #333; border: 1px solid #ddd;">
+          <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+            <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/>
+            <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/>
+            <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
+            <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
+          </svg>
+          Sign in with Google
+        </button>
+
+        <div style="display: flex; align-items: center; margin-bottom: 24px;">
+          <div style="flex: 1; height: 1px; background-color: var(--color-border);"></div>
+          <span style="padding: 0 12px; color: var(--color-text-muted); font-size: 0.85rem;">OR</span>
+          <div style="flex: 1; height: 1px; background-color: var(--color-border);"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="login-email">Email Address</label>
+          <input type="email" id="login-email" placeholder="name@example.com" required>
+        </div>
+        <div class="form-group" style="margin-bottom: 24px;">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" placeholder="••••••••" required>
+        </div>
+        
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 16px; margin-top: -12px;">
+          <a href="#" id="show-forgot" style="font-size: 0.85rem; color: var(--color-primary); text-decoration: none;">Forgot Password?</a>
+        </div>
+        
+        <button type="submit" id="btn-email-signin" class="btn btn-primary" style="width: 100%;">Sign In with Email</button>
+        <p style="text-align: center; margin-top: 24px; font-size: 0.9rem;">
+          Don't have an account? <a href="#" id="show-signup" style="color: var(--color-primary); font-weight: 600;">Sign Up</a>
+        </p>
+      </form>
+
+      <!-- SIGN UP FORM -->
+      <form id="signup-form" novalidate style="text-align: left; display: none;">
+        <h1 class="form-title" style="border: none; padding-bottom: 0; text-align: center;">Create Account</h1>
+        <p style="color: var(--color-text-muted); margin-bottom: 24px; font-size: 0.95rem; text-align: center;">
+          Join Smart Civic AI to report and track issues.
+        </p>
+
+        <div class="form-group">
+          <label for="signup-name">Full Name</label>
+          <input type="text" id="signup-name" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+          <label for="signup-email">Email Address</label>
+          <input type="email" id="signup-email" placeholder="name@example.com" required>
+        </div>
+        <div class="form-group" style="margin-bottom: 24px;">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" placeholder="••••••••" required>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+        <p style="text-align: center; margin-top: 24px; font-size: 0.9rem;">
+          Already have an account? <a href="#" id="show-login" style="color: var(--color-primary); font-weight: 600;">Log In</a>
+        </p>
+      </form>
+
+      <!-- FORGOT PASSWORD FORM -->
+      <form id="forgot-form" novalidate style="text-align: left; display: none;">
+        <h1 class="form-title" style="border: none; padding-bottom: 0; text-align: center;">Reset Password</h1>
+        <p style="color: var(--color-text-muted); margin-bottom: 24px; font-size: 0.95rem; text-align: center;">
+          Enter your email address and we'll send you a link to reset your password.
+        </p>
+
+        <div class="form-group" style="margin-bottom: 24px;">
+          <label for="forgot-email">Email Address</label>
+          <input type="email" id="forgot-email" placeholder="name@example.com" required>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Reset Link</button>
+        <p style="text-align: center; margin-top: 24px; font-size: 0.9rem;">
+          Remembered your password? <a href="#" id="back-to-login" style="color: var(--color-primary); font-weight: 600;">Back to Login</a>
+        </p>
+      </form>
+
+    </div>
+  </main>
+
+  <!-- Footer Banner -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h2>Smart Civic AI</h2>
+        <p>An intelligent, AI-powered ticket routing and tracking platform aligned with UN Sustainable Development Goal 11 for resilient, safe human settlements.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Product</h3>
+        <ul>
+          <li><a href="report.html">Submit Ticket</a></li>
+          <li><a href="track.html">Track Status</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Workflow</a></li>
+          <li><a href="faq.html">FAQ Help</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy.html">Data Security Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Built with ❤️ using HTML CSS JavaScript + n8n + Gemini AI</p>
+    </div>
+  </footer>
+
+  <!-- Firebase Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+  
+  <script src="../js/utils.js"></script>
+  <script src="../js/firebase.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

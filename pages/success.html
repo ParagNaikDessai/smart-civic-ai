@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submission Successful - Smart Civic AI</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="robots" content="noindex, nofollow">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+
+  <!-- Keyboard Accessibility: Skip to Main Content Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header Banner -->
+  <header>
+    <div class="container header-container">
+      <a href="../index.html" class="logo-link" aria-label="Smart Civic AI Home">
+        <img src="../assets/logo/logo.svg" alt="Smart Civic AI Logo">
+        <span>Smart Civic AI</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="report.html" class="nav-link">Report</a></li>
+          <li><a href="track.html" class="nav-link">Track</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action Controls -->
+      <div class="header-actions">
+        <span class="ai-badge" aria-label="AI Triage Core Operational">AI Core Active</span>
+        
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle visual theme">
+          <svg class="sun-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 17a5 5 0 100-10 5 5 0 000 10z" />
+          </svg>
+          <svg class="moon-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25c0 5.385 4.365 9.75 9.75 9.75 4.507 0 8.33-3.045 9.499-7.143z" />
+          </svg>
+        </button>
+        
+        <button class="btn btn-primary" id="btn-login-header" style="padding: 8px 16px; font-size: 0.85rem; display:none;" aria-label="Login to dashboard">Login</button>
+        <button class="btn btn-secondary" id="btn-logout-header" style="padding: 8px 16px; font-size: 0.85rem; display:none;" aria-label="Logout">Logout</button>
+        
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Body -->
+  <main id="main-content" class="container animate-slide-up">
+    <div class="form-container" style="text-align: center; max-width: 700px;">
+      
+      <!-- Big Success Animation Badge -->
+      <div style="margin: 0 auto 24px auto; width: 68px; height: 68px; background-color: rgba(34, 197, 94, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--color-success); border: 2px solid rgba(34, 197, 94, 0.2); animation: popSuccess 0.5s ease-out;">
+        <svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+
+      <style>
+        @keyframes popSuccess {
+          0% { transform: scale(0.6); opacity: 0; }
+          100% { transform: scale(1); opacity: 1; }
+        }
+      </style>
+
+      <h1 class="form-title" style="border: none; margin-bottom: 8px; padding-bottom: 0;">Complaint Submitted Successfully</h1>
+      <p style="color: var(--color-text-muted); margin-bottom: 32px; font-size: 0.95rem;">
+        Your report has been successfully processed. The AI routing engine has analyzed the case details and assigned it to the respective operations team.
+      </p>
+
+      <!-- Premium Receipt Card -->
+      <div class="receipt-card animate-fade-in" style="text-align: left; margin-bottom: 32px;">
+        <div class="receipt-header">
+          <span style="font-weight: 750; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">Ticket Receipt</span>
+          <span id="display-id" class="receipt-id-badge">SCAI-2026-XXXX</span>
+        </div>
+        <div class="receipt-body">
+          <div class="receipt-grid">
+            <div class="receipt-item">
+              <label>Issue Title</label>
+              <p id="display-title">Loading title...</p>
+            </div>
+            <div class="receipt-item">
+              <label>Category</label>
+              <p id="display-category">Loading category...</p>
+            </div>
+            <div class="receipt-item">
+              <label>AI Severity Rating</label>
+              <div><span id="display-priority" class="badge">Loading...</span></div>
+            </div>
+            <div class="receipt-item">
+              <label>Assigned Operations Team</label>
+              <p id="display-dept">Loading team...</p>
+            </div>
+            <div class="receipt-item">
+              <label>Submission Time</label>
+              <p id="display-time">Loading time...</p>
+            </div>
+            <div class="receipt-item">
+              <label>Current Status</label>
+              <div><span id="display-status" class="badge">Loading...</span></div>
+            </div>
+          </div>
+          
+          <div class="receipt-description">
+            <label>Location Landmark Details</label>
+            <p id="display-location" style="color: var(--color-text); font-weight: 600;"></p>
+          </div>
+
+          <div id="ai-summary-container" class="receipt-description" style="display: none; margin-top: 20px;">
+            <label>AI Analysis Summary</label>
+            <p id="display-summary" style="color: var(--color-text); font-style: italic;"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action controls grid -->
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a id="btn-track-link" href="track.html" class="btn btn-primary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 4px;" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+          </svg>
+          Track Complaint
+        </a>
+        <button id="btn-copy-id" class="btn btn-secondary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 4px;" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2"/>
+          </svg>
+          Copy ID
+        </button>
+        <button onclick="window.print();" class="btn btn-secondary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="vertical-align: middle; margin-right: 4px;" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+          </svg>
+          Download Receipt
+        </button>
+        <a href="../index.html" class="btn btn-secondary">Return Home</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer Banner -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h2>Smart Civic AI</h2>
+        <p>An intelligent, AI-powered ticket routing and tracking platform aligned with UN Sustainable Development Goal 11 for resilient, safe human settlements.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Product</h3>
+        <ul>
+          <li><a href="report.html">Submit Ticket</a></li>
+          <li><a href="track.html">Track Status</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Workflow</a></li>
+          <li><a href="faq.html">FAQ Help</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy.html">Data Security Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Built with ❤️ using HTML CSS JavaScript + n8n + Gemini AI</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/utils.js"></script>
+  <script src="../js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+
+      if (!id) {
+        window.location.href = '../index.html';
+        return;
+      }
+
+      try {
+        const record = await API.getComplaint(id);
+        
+        // Fill receipt details
+        document.getElementById('display-id').textContent = record.id;
+        document.getElementById('display-title').textContent = record.title;
+        document.getElementById('display-category').textContent = translateCategory(record.category);
+        document.getElementById('display-dept').textContent = record.department;
+        document.getElementById('display-location').textContent = record.location || 'N/A';
+        
+        // Format creation time
+        const createdDate = new Date(record.createdAt);
+        document.getElementById('display-time').textContent = createdDate.toLocaleString();
+        
+        // Severity Badge
+        const pBadge = document.getElementById('display-priority');
+        pBadge.className = `badge badge-${record.priority.toLowerCase()}`;
+        pBadge.textContent = record.priority;
+        
+        // Status Badge
+        const sBadge = document.getElementById('display-status');
+        sBadge.className = `badge badge-${record.status.toLowerCase()}`;
+        sBadge.textContent = record.status.toUpperCase();
+
+        // Update tracking button url
+        document.getElementById('btn-track-link').href = `track.html?id=${encodeURIComponent(record.id)}`;
+
+        // Display AI Summary if available
+        if (record.aiSummary) {
+          document.getElementById('display-summary').textContent = record.aiSummary;
+          document.getElementById('ai-summary-container').style.display = 'block';
+        }
+
+        // Copy Reference ID click binding
+        document.getElementById('btn-copy-id').addEventListener('click', () => {
+          navigator.clipboard.writeText(record.id).then(() => {
+            window.Notification.show('Reference ID copied to clipboard.', 'success');
+          }).catch(err => {
+            console.error('Copy failed', err);
+          });
+        });
+
+      } catch (error) {
+        console.error(error);
+        window.Notification.show('Unable to load receipt details.', 'error');
+      }
+    });
+
+    function translateCategory(cat) {
+      const mapping = {
+        'waste': 'Waste Management',
+        'road': 'Infrastructure Group',
+        'water': 'Water Services',
+        'streetlight': 'Road Maintenance',
+        'safety': 'Public Safety',
+        'other': 'Operations Group'
+      };
+      return mapping[cat.toLowerCase()] || cat;
+    }
+  </script>
+
+  <!-- Firebase Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+  
+  <script src="../js/firebase.js"></script>
+  <script src="../js/auth.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions - Smart Civic AI</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Find answers about submitting tickets, AI triage logic, offline usage, and tracking ticket progress on the Smart Civic AI platform.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css?v=2">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+
+  <!-- Keyboard Accessibility: Skip to Main Content Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header Banner -->
+  <header>
+    <div class="container header-container">
+      <a href="../index.html" class="logo-link" aria-label="Smart Civic AI Home">
+        <img src="../assets/logo/logo.svg" alt="Smart Civic AI Logo">
+        <span>Smart Civic AI</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="report.html" class="nav-link">Report</a></li>
+          <li><a href="track.html" class="nav-link">Track</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action Controls -->
+      <div class="header-actions">
+        <span class="ai-badge" aria-label="AI Triage Core Operational">AI Core Active</span>
+        
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle visual theme">
+          <svg class="sun-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 17a5 5 0 100-10 5 5 0 000 10z" />
+          </svg>
+          <svg class="moon-icon" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25c0 5.385 4.365 9.75 9.75 9.75 4.507 0 8.33-3.045 9.499-7.143z" />
+          </svg>
+        </button>
+        
+        <button class="btn btn-primary" id="btn-login-header" style="padding: 8px 16px; font-size: 0.85rem; display:none;" aria-label="Login to dashboard">Login</button>
+        <button class="btn btn-secondary" id="btn-logout-header" style="padding: 8px 16px; font-size: 0.85rem; display:none;" aria-label="Logout">Logout</button>
+        
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Body -->
+  <main id="main-content" class="container animate-fade-in" style="max-width: 800px;">
+    
+    <div style="margin-bottom: 32px;">
+      <h1 style="color: var(--color-text); font-size: 2rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 6px;">Frequently Asked Questions</h1>
+      <p style="color: var(--color-text-muted); font-size: 0.95rem;">Find answers about submitting tickets, AI triage, or data privacy.</p>
+    </div>
+
+    <!-- Active Search FAQ Input -->
+    <input type="text" id="faq-search" class="faq-search-box" placeholder="Search FAQs by keywords...">
+
+    <!-- FAQ Accordion List -->
+    <div class="faq-list">
+      
+      <!-- Q1 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-a1">
+          What is Smart Civic AI?
+        </button>
+        <div id="faq-a1" class="faq-answer" role="region">
+          <div class="faq-answer-content">
+            Smart Civic AI is a lightweight community issue management platform designed in alignment with UN SDG 11 (Sustainable Cities and Communities). It simplifies reporting local infrastructure problems (e.g. damaged utilities, sanitation tasks) by using a smart routing mechanism to triage and forward incidents directly to the correct operations teams.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-a2">
+          How does the AI routing system classify tickets?
+        </button>
+        <div id="faq-a2" class="faq-answer" role="region">
+          <div class="faq-answer-content">
+            When a ticket is submitted, our system analyzes the category, description keywords, and location data. In production, an AI model (like Gemini) evaluates severity levels (assigning Low, Medium, or High priority ratings) and maps the case to the appropriate operations team. The local storage fallback replicates this behavior.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-a3">
+          What is UN Sustainable Development Goal 11?
+        </button>
+        <div id="faq-a3" class="faq-answer" role="region">
+          <div class="faq-answer-content">
+            SDG 11 is one of 17 UN Sustainable Development Goals, targeting the creation of inclusive, safe, resilient, and sustainable settlements. This platform supports these targets by accelerating response times to local waste accumulation, utility outages, and infrastructure issues.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-a4">
+          Is it mandatory to share GPS coordinates?
+        </button>
+        <div id="faq-a4" class="faq-answer" role="region">
+          <div class="faq-answer-content">
+            No, GPS coordinates are optional. However, attaching coordinates (by clicking the "Get Location" button) allows field maintenance crews to identify the exact spot of the issue immediately on maps, decreasing resolution times.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-a5">
+          How do I track my submitted ticket?
+        </button>
+        <div id="faq-a5" class="faq-answer" role="region">
+          <div class="faq-answer-content">
+            Upon submitting a report, the platform generates a unique Reference ID (e.g. SCAI-2026-9081). Save this ID and head to the "Track Ticket" page. Paste the ID in the search box to view a visual progression timeline showing submission checks, AI analysis logs, team assignments, and resolution notes.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-a6">
+          Does this platform work offline?
+        </button>
+        <div id="faq-a6" class="faq-answer" role="region">
+          <div class="faq-answer-content">
+            Yes! We designed this frontend to support full offline capabilities. We use standard system font stacks (Arial, Segoe UI, Roboto) instead of online Google Fonts, and the local storage database works entirely in your browser without requiring active external internet connections.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer Banner -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h2>Smart Civic AI</h2>
+        <p>An intelligent, AI-powered ticket routing and tracking platform aligned with UN Sustainable Development Goal 11 for resilient, safe human settlements.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Product</h3>
+        <ul>
+          <li><a href="report.html">Submit Ticket</a></li>
+          <li><a href="track.html">Track Status</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Workflow</a></li>
+          <li><a href="faq.html">FAQ Help</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="privacy.html">Data Security Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Built with ❤️ using HTML CSS JavaScript + n8n + Gemini AI</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/utils.js"></script>
+  <script src="../js/app.js"></script>
+  <script>
+    // Accordion interaction & FAQ Filtering search logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      const searchInput = document.getElementById('faq-search');
+      const faqItems = document.querySelectorAll('.faq-item');
+
+      faqQuestions.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.parentElement;
+          const answer = item.querySelector('.faq-answer');
+          const isOpen = item.classList.contains('open');
+
+          // Close all items
+          document.querySelectorAll('.faq-item').forEach(otherItem => {
+            otherItem.classList.remove('open');
+            otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            otherItem.querySelector('.faq-answer').style.maxHeight = null;
+          });
+
+          // Open clicked item if it was closed
+          if (!isOpen) {
+            item.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+          }
+        });
+      });
+
+      // Filter FAQ items based on search query text
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const query = e.target.value.toLowerCase().trim();
+          
+          faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question').textContent.toLowerCase();
+            const answer = item.querySelector('.faq-answer-content').textContent.toLowerCase();
+            
+            if (question.includes(query) || answer.includes(query)) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      }
+    });
+  </script>
+
+  <!-- Firebase Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+  
+  <script src="../js/firebase.js"></script>
+  <script src="../js/auth.js"></script>
+
+</body>
+</html>

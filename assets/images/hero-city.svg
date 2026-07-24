@@ -1,0 +1,247 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <!-- Definitions for Gradients and Shadows -->
+  <defs>
+    <!-- Background Cloud Gradient -->
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ebf1fa" />
+      <stop offset="100%" stop-color="#f8fafc" />
+    </linearGradient>
+
+    <!-- Buildings Indigo/Blue Gradient -->
+    <linearGradient id="buildingBlue1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4776f6" />
+      <stop offset="100%" stop-color="#648bf7" />
+    </linearGradient>
+    <linearGradient id="buildingBlue2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6289fa" />
+      <stop offset="100%" stop-color="#7ea1fb" />
+    </linearGradient>
+
+    <!-- Buildings Purple/Lavender Gradient -->
+    <linearGradient id="buildingPurple1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c6ef6" />
+      <stop offset="100%" stop-color="#9487f8" />
+    </linearGradient>
+    <linearGradient id="buildingPurple2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9b8ef8" />
+      <stop offset="100%" stop-color="#b1a6fa" />
+    </linearGradient>
+    
+    <!-- Base block cyan gradient -->
+    <linearGradient id="buildingCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00acc1" />
+      <stop offset="100%" stop-color="#00bcd4" />
+    </linearGradient>
+
+    <!-- Trees Gradient -->
+    <linearGradient id="treeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0ba94a" />
+      <stop offset="100%" stop-color="#12823b" />
+    </linearGradient>
+    <linearGradient id="treeLightGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#26c6da" />
+      <stop offset="100%" stop-color="#00acc1" />
+    </linearGradient>
+
+    <!-- Drop Shadow for Badges -->
+    <filter id="badgeShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#1e293b" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- BACKGROUND SOFT CLOUDS -->
+  <path d="M 120,400 
+           C 80,350 100,280 160,260 
+           C 180,180 280,100 400,100 
+           C 520,100 620,160 640,240 
+           C 700,260 740,320 700,400 Z" 
+        fill="url(#cloudGrad)" opacity="0.8" />
+  
+  <circle cx="160" cy="180" r="15" fill="#e2e8f0" opacity="0.6" />
+  <circle cx="510" cy="120" r="10" fill="#e2e8f0" opacity="0.6" />
+
+  <!-- DOTTED CONNECTOR LINES FOR FLOATING BADGES -->
+  <line x1="150" y1="250" x2="150" y2="400" stroke="#fca511" stroke-width="2" stroke-dasharray="4,4" />
+  <line x1="290" y1="130" x2="290" y2="200" stroke="#1e88e5" stroke-width="2" stroke-dasharray="4,4" />
+  <line x1="580" y1="140" x2="580" y2="250" stroke="#00c853" stroke-width="2" stroke-dasharray="4,4" />
+
+  <!-- BACKGROUND SKYSCRAPERS (Lighter / Distant) -->
+  <!-- Distant tower 1 (behind left) -->
+  <rect x="252" y="295" width="22" height="110" fill="#d2dcf5" opacity="0.6" />
+  <!-- Distant tower 2 (behind center) -->
+  <rect x="362" y="270" width="30" height="135" fill="#d2dcf5" opacity="0.6" />
+  <!-- Distant tower 3 (behind right) -->
+  <rect x="562" y="325" width="35" height="80" fill="#d2dcf5" opacity="0.6" />
+
+  <!-- MAIN SKYSCRAPERS LAYER -->
+  
+  <!-- Building 1: Leftmost short building -->
+  <rect x="160" y="315" width="36" height="90" rx="2" fill="url(#buildingPurple2)" />
+  <line x1="178" y1="315" x2="178" y2="220" stroke="#b1a6fa" stroke-width="1.5" />
+  <!-- Windows -->
+  <rect x="166" y="325" width="8" height="10" rx="1" fill="#ffffff" opacity="0.4" />
+  <rect x="178" y="325" width="8" height="10" rx="1" fill="#ffffff" opacity="0.4" />
+  <rect x="166" y="340" width="8" height="10" rx="1" fill="#ffffff" opacity="0.4" />
+  <rect x="178" y="340" width="8" height="10" rx="1" fill="#ffffff" opacity="0.4" />
+  <rect x="166" y="355" width="8" height="10" rx="1" fill="#ffffff" opacity="0.4" />
+  <rect x="178" y="355" width="8" height="10" rx="1" fill="#ffffff" opacity="0.4" />
+  <rect x="166" y="370" width="8" height="10" rx="1" fill="#ffffff" opacity="0.4" />
+  <rect x="178" y="370" width="8" height="10" rx="1" fill="#ffffff" opacity="0.4" />
+
+  <!-- Building 2: Left Mid tower -->
+  <rect x="206" y="260" width="48" height="145" rx="3" fill="url(#buildingBlue1)" />
+  <line x1="230" y1="260" x2="230" y2="215" stroke="#4776f6" stroke-width="2" />
+  <!-- Windows -->
+  <rect x="214" y="275" width="8" height="12" rx="1" fill="#ffffff" opacity="0.5" />
+  <rect x="228" y="275" width="8" height="12" rx="1" fill="#ffffff" opacity="0.5" />
+  <rect x="214" y="295" width="8" height="12" rx="1" fill="#ffffff" opacity="0.5" />
+  <rect x="228" y="295" width="8" height="12" rx="1" fill="#ffffff" opacity="0.5" />
+  <rect x="214" y="315" width="8" height="12" rx="1" fill="#ffffff" opacity="0.5" />
+  <rect x="228" y="315" width="8" height="12" rx="1" fill="#ffffff" opacity="0.5" />
+  <rect x="214" y="335" width="8" height="12" rx="1" fill="#ffffff" opacity="0.5" />
+  <rect x="228" y="335" width="8" height="12" rx="1" fill="#ffffff" opacity="0.5" />
+  <rect x="214" y="355" width="8" height="12" rx="1" fill="#ffffff" opacity="0.5" />
+  <rect x="228" y="355" width="8" height="12" rx="1" fill="#ffffff" opacity="0.5" />
+
+  <!-- Building 3: Left tower with pointed structure -->
+  <rect x="278" y="185" width="56" height="220" rx="3" fill="url(#buildingBlue1)" />
+  <!-- Pointy roof detail -->
+  <polygon points="278,185 306,155 334,185" fill="url(#buildingBlue2)" />
+  <line x1="306" y1="155" x2="306" y2="120" stroke="#648bf7" stroke-width="2" />
+  <!-- Vertical window lines style -->
+  <rect x="288" y="200" width="6" height="180" rx="1" fill="#ffffff" opacity="0.3" />
+  <rect x="298" y="200" width="6" height="180" rx="1" fill="#ffffff" opacity="0.3" />
+  <rect x="308" y="200" width="6" height="180" rx="1" fill="#ffffff" opacity="0.3" />
+  <rect x="318" y="200" width="6" height="180" rx="1" fill="#ffffff" opacity="0.3" />
+
+  <!-- Building 4: Small teal base block -->
+  <rect x="260" y="350" width="150" height="55" rx="3" fill="url(#buildingCyan)" />
+  <rect x="272" y="362" width="10" height="6" rx="1" fill="#ffffff" opacity="0.5" />
+  <rect x="286" y="362" width="10" height="6" rx="1" fill="#ffffff" opacity="0.5" />
+  <rect x="300" y="362" width="10" height="6" rx="1" fill="#ffffff" opacity="0.5" />
+  <rect x="314" y="362" width="10" height="6" rx="1" fill="#ffffff" opacity="0.5" />
+  <rect x="362" y="362" width="10" height="6" rx="1" fill="#ffffff" opacity="0.5" />
+  <rect x="376" y="362" width="10" height="6" rx="1" fill="#ffffff" opacity="0.5" />
+  <rect x="390" y="362" width="10" height="6" rx="1" fill="#ffffff" opacity="0.5" />
+
+  <!-- Building 5: Distant light tower in middle -->
+  <rect x="342" y="230" width="48" height="130" fill="url(#buildingBlue2)" opacity="0.9" />
+  <rect x="350" y="245" width="8" height="8" rx="1" fill="#ffffff" opacity="0.3" />
+  <rect x="362" y="245" width="8" height="8" rx="1" fill="#ffffff" opacity="0.3" />
+  <rect x="374" y="245" width="8" height="8" rx="1" fill="#ffffff" opacity="0.3" />
+  <rect x="350" y="265" width="8" height="8" rx="1" fill="#ffffff" opacity="0.3" />
+  <rect x="362" y="265" width="8" height="8" rx="1" fill="#ffffff" opacity="0.3" />
+  <rect x="374" y="265" width="8" height="8" rx="1" fill="#ffffff" opacity="0.3" />
+
+  <!-- Building 6: Central tall skyscraper -->
+  <rect x="402" y="150" width="70" height="255" rx="4" fill="url(#buildingPurple1)" />
+  <polygon points="402,150 437,120 472,150" fill="url(#buildingPurple2)" />
+  <line x1="437" y1="120" x2="437" y2="80" stroke="#9487f8" stroke-width="2.5" />
+  <!-- Windows Columns -->
+  <rect x="414" y="170" width="10" height="210" rx="1" fill="#ffffff" opacity="0.25" />
+  <rect x="430" y="170" width="10" height="210" rx="1" fill="#ffffff" opacity="0.25" />
+  <rect x="446" y="170" width="10" height="210" rx="1" fill="#ffffff" opacity="0.25" />
+
+  <!-- Building 7: Middle-right tall tower -->
+  <rect x="498" y="210" width="60" height="195" rx="3" fill="url(#buildingBlue1)" />
+  <line x1="528" y1="210" x2="528" y2="165" stroke="#4776f6" stroke-width="2" />
+  <!-- Window Details -->
+  <rect x="508" y="225" width="8" height="150" rx="1" fill="#ffffff" opacity="0.25" />
+  <rect x="522" y="225" width="8" height="150" rx="1" fill="#ffffff" opacity="0.25" />
+  <rect x="536" y="225" width="8" height="150" rx="1" fill="#ffffff" opacity="0.25" />
+
+  <!-- Building 8: Right tower with tall windows -->
+  <rect x="568" y="270" width="80" height="135" rx="4" fill="url(#buildingPurple1)" />
+  <rect x="578" y="285" width="14" height="110" rx="1" fill="#ffffff" opacity="0.3" />
+  <rect x="600" y="285" width="14" height="110" rx="1" fill="#ffffff" opacity="0.3" />
+  <rect x="622" y="285" width="14" height="110" rx="1" fill="#ffffff" opacity="0.3" />
+
+  <!-- Building 9: Far right tall spire tower -->
+  <rect x="660" y="180" width="55" height="225" rx="3" fill="url(#buildingBlue2)" />
+  <polygon points="660,180 687,145 715,180" fill="url(#buildingBlue1)" />
+  <line x1="687" y1="145" x2="687" y2="90" stroke="#7ea1fb" stroke-width="2" />
+  <!-- Windows vertical columns -->
+  <rect x="672" y="195" width="6" height="190" rx="1" fill="#ffffff" opacity="0.3" />
+  <rect x="684" y="195" width="6" height="190" rx="1" fill="#ffffff" opacity="0.3" />
+  <rect x="696" y="195" width="6" height="190" rx="1" fill="#ffffff" opacity="0.3" />
+
+  <!-- Building 10: Rightmost short building -->
+  <rect x="726" y="305" width="52" height="100" rx="2" fill="url(#buildingPurple2)" />
+  <line x1="752" y1="305" x2="752" y2="250" stroke="#b1a6fa" stroke-width="1.5" />
+  <!-- Windows -->
+  <rect x="734" y="320" width="8" height="10" rx="1" fill="#ffffff" opacity="0.4" />
+  <rect x="746" y="320" width="8" height="10" rx="1" fill="#ffffff" opacity="0.4" />
+  <rect x="758" y="320" width="8" height="10" rx="1" fill="#ffffff" opacity="0.4" />
+  <rect x="734" y="335" width="8" height="10" rx="1" fill="#ffffff" opacity="0.4" />
+  <rect x="746" y="335" width="8" height="10" rx="1" fill="#ffffff" opacity="0.4" />
+  <rect x="758" y="335" width="8" height="10" rx="1" fill="#ffffff" opacity="0.4" />
+  <rect x="734" y="350" width="8" height="10" rx="1" fill="#ffffff" opacity="0.4" />
+  <rect x="746" y="350" width="8" height="10" rx="1" fill="#ffffff" opacity="0.4" />
+  <rect x="758" y="350" width="8" height="10" rx="1" fill="#ffffff" opacity="0.4" />
+
+  <!-- FOREGROUND LUSH TREES & PARKLAND OVERLAYS (Beautiful circles base) -->
+  <g>
+    <!-- Distant lighter/teal bushes -->
+    <circle cx="150" cy="405" r="28" fill="url(#treeLightGrad)" />
+    <circle cx="340" cy="400" r="32" fill="url(#treeLightGrad)" />
+    <circle cx="480" cy="405" r="30" fill="url(#treeLightGrad)" />
+    <circle cx="715" cy="405" r="26" fill="url(#treeLightGrad)" />
+
+    <!-- Main Green Trees -->
+    <!-- Tree cluster left -->
+    <circle cx="120" cy="400" r="24" fill="url(#treeGrad)" />
+    <path d="M120,376 L120,410 M110,395 L120,385 M130,400 L120,390" stroke="#12823b" stroke-width="1.5" />
+    <circle cx="180" cy="410" r="22" fill="url(#treeGrad)" />
+    
+    <!-- Tree cluster center-left -->
+    <circle cx="390" cy="380" r="38" fill="url(#treeGrad)" />
+    <path d="M390,342 L390,410 M370,375 L390,358 M410,385 L390,368 M375,395 L390,380" stroke="#12823b" stroke-width="2" />
+    <circle cx="430" cy="390" r="30" fill="url(#treeGrad)" />
+    
+    <!-- Tree cluster center-right -->
+    <circle cx="530" cy="385" r="36" fill="url(#treeGrad)" />
+    <path d="M530,349 L530,410 M510,380 L530,365 M550,390 L530,375" stroke="#12823b" stroke-width="2" />
+    
+    <!-- Tree cluster right -->
+    <circle cx="680" cy="395" r="24" fill="url(#treeGrad)" />
+    <path d="M680,371 L680,410 M670,390 L680,380 M690,395 L680,385" stroke="#12823b" stroke-width="1.5" />
+    <circle cx="735" cy="390" r="28" fill="url(#treeGrad)" />
+    <path d="M735,362 L735,410 M720,385 L735,372 M750,392 L735,380" stroke="#12823b" stroke-width="2" />
+    
+    <!-- Flat park ground footer base -->
+    <rect x="40" y="405" width="720" height="15" rx="7" fill="#12823b" />
+  </g>
+
+  <!-- FLOATING BADGES (Wow details exactly matching attached image) -->
+  
+  <!-- Left Badge: Yellow Camera -->
+  <g transform="translate(150, 250)" filter="url(#badgeShadow)">
+    <circle cx="0" cy="0" r="26" fill="#fca511" stroke="#ffffff" stroke-width="3" />
+    <!-- Camera Icon path details -->
+    <rect x="-11" y="-6" width="22" height="14" rx="2" fill="none" stroke="#1e293b" stroke-width="2" />
+    <path d="M -5,-6 L -3,-10 L 3,-10 L 5,-6" fill="none" stroke="#1e293b" stroke-width="2" stroke-linejoin="round" />
+    <circle cx="0" cy="1" r="4" fill="none" stroke="#1e293b" stroke-width="2" />
+    <circle cx="6" cy="-2" r="1" fill="#1e293b" />
+  </g>
+
+  <!-- Center Badge: Blue Security Shield Check -->
+  <g transform="translate(290, 130)" filter="url(#badgeShadow)">
+    <circle cx="0" cy="0" r="26" fill="#1e88e5" stroke="#ffffff" stroke-width="3" />
+    <!-- Shield and Check Icon path details -->
+    <path d="M-10,-9 L10,-9 L10,-2 C10,4 0,11 0,11 C0,11 -10,4 -10,-2 Z" fill="none" stroke="#1e293b" stroke-width="2" stroke-linejoin="round" />
+    <path d="M-5,0 L-1.5,3.5 L5,-3" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Right Badge: Green Leaf / Sprout -->
+  <g transform="translate(580, 140)" filter="url(#badgeShadow)">
+    <circle cx="0" cy="0" r="26" fill="#00c853" stroke="#ffffff" stroke-width="3" />
+    <!-- Leaf Sprout Icon path details -->
+    <!-- Stem -->
+    <path d="M 0,12 C 0,5 -3,-5 -8,-8 M 0,6 C 0,2 3,-3 8,-6 M 0,12 L 0,-12" fill="none" stroke="#1e293b" stroke-width="2" stroke-linecap="round" />
+    <!-- Leaf outline left -->
+    <path d="M -8,-8 C -14,-4 -12,4 0,6" fill="none" stroke="#1e293b" stroke-width="2" stroke-linecap="round" />
+    <!-- Leaf outline right -->
+    <path d="M 8,-6 C 14,-2 12,6 0,6" fill="none" stroke="#1e293b" stroke-width="2" stroke-linecap="round" />
+  </g>
+
+</svg>
